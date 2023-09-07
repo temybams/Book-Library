@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/stylesheets/register.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="middle"><h2>Register</h2></div>
+            <form id="log-form" class="input-group" method="post" action="/users/register">
+                <input class="input-field" placeholder="AuthorName" name="AuthorName" type="text" required>
+                <input class="input-field" placeholder="Email"  name="Email" type="email" required>
+                <input class="input-field" placeholder="Password" name="Password" type="password" required>
+                <input  class="input-field" placeholder="PhoneNumber" name="PhoneNumber" type="phone" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions & conditions</span>
+                <button type="submit" class = "submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

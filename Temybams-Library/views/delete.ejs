@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <script src="https://kit.fontawesome.com/80b2adc98c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/details.css"> <!-- Include your own stylesheet -->
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <p>Temybams Library</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/users/books">My Books</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="form-container">
+            <h2 class="form-heading">Delete Book</h2>
+            <form class="delete-form" method="POST" action="/books/delete/<%= updateBook._id %>">
+                <p>Are you sure you want to delete the book "<%= updateBook.Title %>"?</p>
+                <div class="form-group">
+                    <button type="submit">Delete Book</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+
+</body>
+
+</html>

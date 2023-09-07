@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <script src="https://kit.fontawesome.com/80b2adc98c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <p>Temybams library</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/books/">Add Book</a></li>
+                <form method="post" action="/users/logout">
+                    <button type="submit" class="btn btn--green btn--small">Logout</button>
+                  </form>
+            </ul>
+            
+        </nav>
+    </header>
+
+
+    <main class="main">
+        <div class="card-container">
+            <% books.forEach(book=> { %>
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__picture">
+                            <div class="card__picture-overlay">&nbsp;</div>
+                            <img src="<%= book.Image %>" alt="<%= book.Title %>" class="card__picture-img" />
+                        </div>
+
+                        <h3 class="heading-tertirary">
+                            <span>
+                                <%= book.Title %>
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="card__details">
+                        <h4 class="card__sub-heading">Published: <%= book.datePublished.toDateString() %>
+                        </h4>
+                        <p class="card__text">Description:
+                            <%= book.Description %>
+                        </p>
+                        <div class="card__data">
+                            <svg class="card__icon">
+                                <use xlink:href="img/icons.svg#icon-map-pin"></use>
+                            </svg>
+                            <span>Genre: <%= book.Genre %></span>
+                        </div>
+                        <div class="card__data">
+                            <span>Page Count: <%= book.pageCount %></span>
+                        </div>
+                        
+                        <div class="card__data">
+                            <span>Publisher: <%= book.Publisher %></span>
+                        </div>
+                      
+
+                    </div>
+                    <div class="card__footer">
+                        <p>
+                            <span class="card__footer-value"></span>
+                            <span class="card__footer-text"></span>
+                        </p>
+                        <p class="card__ratings">
+                            <span class="card__footer-value"></span>
+                            <span class="card__footer-text"></span>
+                        </p>
+                        <a href="/books/<%= book._id %>" class="btn btn--green btn--small">Details</a>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </main>
+</body>
+
+</html>

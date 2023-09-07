@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Add a new book</title>
+  <script src="https://kit.fontawesome.com/80b2adc98c.js" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='/stylesheets/addbook.css' />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/users/books">My Books</a></li>
+
+    </ul>
+  </nav>
+  <section>
+    <form action="/books/add" method="post">
+      <h2>Add a new book</h2>
+      <fieldset>
+        <li>
+          <input type="text" name="Title" placeholder="Book title" required>
+        </li>
+        <li>
+          <input type="date" name="datePublished" placeholder="Enter date" required>
+        </li>
+        <li>
+          <textarea name="Description" id="" cols="30" rows="10" required placeholder="description"></textarea>
+        </li>
+        <li>
+          <textarea name="Summary" id="" cols="30" rows="10" required placeholder="Summary"></textarea>
+        </li>
+        <li>
+          <input type="number" name="pageCount" placeholder="Number of pages" required>
+        </li>
+        <li>
+          <input name="Genre" list="genres" placeholder="Select genre">
+          <datalist id="genres">
+            <option value="Adventure"></option>
+            <option value="Romance"></option>
+            <option value="Education"></option>
+            <option value="Comedy"></option>
+            <option value="Other">
+              Specify any other genre.
+            </option>
+          </datalist>
+        </li>
+        <li>
+          <input type="text" name="Publisher" placeholder="publisher" required>
+        </li>
+        <li>
+          <input type="url" name="Image" placeholder="Image" required>
+        </li>
+        <li>
+          <input type="submit" value="submit">
+        </li>
+      </fieldset>
+    </form>
+  </section>
+</body>
+
+</html>

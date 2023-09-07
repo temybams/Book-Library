@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <script src="https://kit.fontawesome.com/80b2adc98c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/update.css"> 
+
+<body>
+
+    <header>
+        <div class="logo">
+            <p>Temybams Library</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/users/books">My Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="form-container">
+            <h2 class="form-heading">Update Book</h2>
+            <form class="update-form" method="POST" action="/books/update/<%= updateBook._id %>">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" value="<%= updateBook.Title %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="datePublished">Date Published</label>
+                    <input type="date" id="datePublished" name="datePublished"
+                        value="<%= updateBook.datePublished.toISOString().split('T')[0] %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required><%= updateBook.Description %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Summary">Summary</label>
+                    <textarea id="summary" name="Summary" required><%= updateBook.Summary %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pageCount">Page Count</label>
+                    <input type="number" id="pageCount" name="pageCount" value="<%= updateBook.pageCount %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" name="genre" value="<%= updateBook.Genre %>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="publisher">Publisher</label>
+                    <input type="text" id="publisher" name="publisher" value="<%= updateBook.Publisher %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="Image">Image</label>
+                    <input type="text" id="image" name="Image" value="<%= updateBook.Image %>" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Update Book</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
